@@ -1,46 +1,44 @@
 /**
  * @author: Maaraki Zakaria
- * enqueue, dequeue and peek in constant time.
+ * push, pop and peek in constant time.
  */
 
-class Queue {
+class Stack{
 
     constructor(){
         this.list=new LinkedList();
     }
 
     /**
-     * Add an element to the top of the queue.
-     * @param {Object} value 
+     * Add an element to the top of the stack.
+     * @param {Object} value The element to push to the stack. 
      */
-    enqueue(value){
-        this.list.add(value);
+    push(value){
+        this.list.addLast(value);
     }
 
     /**
-     * Return the element in the top of the queue.
-     * @returns {Object} The first element in the Queue.
+     * Remove and return the top of the stack.
+     * @returns {Object} The top of the stack.
+     */
+    pop(){
+        if(list.size==0)return null;
+        let ans=this.list.getFirst();
+        this.list.remove(0);
+        return ans;
+    }
+
+    /**
+     * Return the top of the stack.
+     * @return {Object} The top of the stack.
      */
     peek(){
         return this.list.getFirst();
     }
 
     /**
-     * Return and remove the element in the top of the queue.
-     * @returns {Object} element in the top of the queue.
-     */
-    dequeue(){
-        if(this.list.size()==0)return null;
-        else {
-            let ans=this.list.get(0);
-            this.list.remove(0);
-            return ans;
-        }
-    }
-
-    /**
-     * Size of the queue.
-     * @returns {number} The size of the queue.
+     * Size of the stack.
+     * @returns {number} The size of the stack.
      */
     size(){
         return this.list.size();
@@ -54,15 +52,15 @@ class Queue {
     }
 
     /**
-     * Check if the queue is empty.
-     * @returns {boolean} true, or false if the queue is not empty.
+     * Check if the stack is empty.
+     * @returns {boolean} true, or false if the stack is not empty.
      */
     isEmpty(){
         return this.list.isEmpty();
     }
 
     /**
-     * Check if the queue contain the specified element. 
+     * Check if the stack contain the specified element. 
      * @param {Object} value The value we are looking for.
      * @param {function(Object,Object):number} callback The equals callback function.
      */
@@ -71,7 +69,7 @@ class Queue {
     }
 
     /**
-     * Call the callback function for every element in the queue,
+     * Call the callback function for every element in the stack,
      * to break the iteration the callback function must return false.
      * @param {function(Object)} callback The callback function
      */
@@ -79,24 +77,25 @@ class Queue {
         this.list.forEach(callback);
     }
 
-    /**
-     * Reverse the queue elements.
+     /**
+     * Reverse the stack elements.
      */
     reverse(){
         this.list.reverse();
     }
 
     /**
-     * @returns {Object}
+     * @returns {Object} An array.
      */
     toArray(){
         return this.list.toArray();
     }
 
     /**
-     * @return {string}  
+     * @returns {string}
      */
     toString(){
         return this.list.toString();
     }
+
 }
