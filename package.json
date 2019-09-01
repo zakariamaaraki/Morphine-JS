@@ -1,0 +1,25 @@
+{
+  "name": "morphine",
+  "version": "1.0.0",
+  "description": "\u0016Full data structure library written in JavaScript.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrolyCode/Morphine-JS.git"
+  },
+  "keywords": [
+    "data-structure"
+  ],
+  "author": "Maaraki Zakaria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrolyCode/Morphine-JS/issues"
+  },
+  "homepage": "https://github.com/BrolyCode/Morphine-JS#readme"
+}
