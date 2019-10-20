@@ -1,10 +1,10 @@
 
 /**
  * @author: Maaraki Zakaria
- * MaxHeap implementation in javaScript
+ * Heap implementation in javaScript
  */
 
-class MaxHeap{
+class Heap{
 
     constructor(compar){
       this.heap=[];
