@@ -85,7 +85,7 @@ class Stack{
     }
 
     /**
-     * @returns {Object} An array.
+     * @returns {Object}
      */
     toArray(){
         return this.list.toArray();
