@@ -1,4 +1,5 @@
 
+
 /**
  * @author: Maaraki Zakaria
  * HashMap implementation in javaScript
@@ -19,8 +20,8 @@ class HashMap{
      */
     put(key,value){
         let hash="##"+key.toString();
+        let ans=undefined;
         if(this.map[hash]===undefined){
-            ans=undefined;
             this.nbElements++;
         }else ans=this.map[hash].value;
           this.map[hash]={
@@ -132,11 +133,61 @@ class HashMap{
      * @param {*} callback The callback function
      */
     forEach(callback){
-        for(key in this.map){
-            res=this.map[key];
+        for(let key in this.map){
+            let res=this.map[key];
             if(res.key===undefined)continue;
             if(callback(res.key,res.value)===false)break;
         }
     }
+    
+    /**
+     * Call the callback function for every element in the map,
+     * @param {callback(Object)} callback 
+     * @returns {Object} new map.
+     */
+    Map(callback){
+        let newMap=new HashMap();
+        for(let key in this.map){
+            let res=this.map[key];
+            if(res.key===undefined)continue;
+            newMap.put(res.key,callback(res.value));
+        }
+        return newMap;
+    }
+
+    /**
+     * keep in the array only elements that satisfies the condition
+     * specified in the callback function
+     * @param {callback(Object):boolean} callback 
+     * @returns {Object} new map.
+     */
+    Filter(callback){
+        let newMap=new HashMap();
+        for(let key in this.map){
+            let res=this.map[key];
+            if(res.key===undefined)continue;
+            if(callback(res.value))newMap.put(res.key,res.value);
+        }
+        return newMap;
+    }
+
+    /**
+     * Reduce the elements in the array to one element
+     * @param {callback(Object,Object):Object} callback 
+     * @returns {Object} reduced element.
+     */
+    Reduce(callback){
+        let newMap=new HashMap();
+        let reduced=undefined;
+        for(let key in this.map){
+            let res=this.map[key];
+            if(res.key===undefined)continue;
+            if(reduced===undefined)reduced=res.value
+            else reduced=callback(reduced,res.value);
+        }
+        return reduced;
+    }
+
+    
 
 }
