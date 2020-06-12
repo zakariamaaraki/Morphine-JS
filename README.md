@@ -17,3 +17,7 @@ Full data structure library written in JavaScript.
 
 * **Zakaria Maaraki** - *Initial work* - [BrolyCode](https://github.com/BrolyCode)
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
