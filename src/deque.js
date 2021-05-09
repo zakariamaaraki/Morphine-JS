@@ -5,32 +5,32 @@
 
 class Deque {
 
-    constructor(){
-        this.list=new LinkedList();
+    constructor() {
+        this.list = new LinkedList();
     }
 
     /**
      * Add an element to the top.
-     * @param {Object} value 
+     * @param {Object} value
      */
-    addFirst(value){
+    addFirst(value) {
         this.list.addFirst(value);
     }
 
     /**
      * Add an element to the end.
-     * @param {Object} value 
+     * @param {Object} value
      */
-    addLast(value){
+    addLast(value) {
         this.list.addLast(value);
     }
 
     /**
      * Add an element to the top.
      * Similar to addFirst.
-     * @param {Object} value 
+     * @param {Object} value
      */
-    add(value){
+    add(value) {
         this.list.addFirst(value);
     }
 
@@ -38,7 +38,7 @@ class Deque {
      * Return the element in the top.
      * @returns {Object} The first element.
      */
-    peek(){
+    peek() {
         return this.list.getFirst();
     }
 
@@ -47,7 +47,7 @@ class Deque {
      * Similar to peek
      * @returns {Object} The first element.
      */
-    peekFirst(){
+    peekFirst() {
         return this.list.getFirst();
     }
 
@@ -55,7 +55,7 @@ class Deque {
      * Return the last element.
      * @returns {Object} The last element.
      */
-    peekLast(){
+    peekLast() {
         return this.list.getLast();
     }
 
@@ -63,10 +63,10 @@ class Deque {
      * Return and remove the element in the top.
      * @returns {Object} element in the top.
      */
-    poll(){
-        if(this.list.size()==0)return null;
+    poll() {
+        if (this.list.size() == 0) return null;
         else {
-            let ans=this.list.get(0);
+            let ans = this.list.get(0);
             this.list.remove(0);
             return ans;
         }
@@ -77,24 +77,24 @@ class Deque {
      * Similar to poll.
      * @returns {Object} element in the top.
      */
-    pollFirst(){
-        if(this.list.size()==0)return null;
+    pollFirst() {
+        if (this.list.size() == 0) return null;
         else {
-            let ans=this.list.get(0);
+            let ans = this.list.get(0);
             this.list.remove(0);
             return ans;
         }
     }
 
-     /**
+    /**
      * Return and remove the last element.
      * @returns {Object} the last element.
      */
-    pollLast(){
-        if(this.list.size()==0)return null;
+    pollLast() {
+        if (this.list.size() == 0) return null;
         else {
-            let ans=this.list.get(this.list.size()-1);
-            this.list.remove(this.list.size()-1);
+            let ans = this.list.get(this.list.size() - 1);
+            this.list.remove(this.list.size() - 1);
             return ans;
         }
     }
@@ -103,14 +103,14 @@ class Deque {
      * Size of the deque.
      * @returns {number} The size of the deque.
      */
-    size(){
+    size() {
         return this.list.size();
     }
 
     /**
      * Set the deque empty.
      */
-    clear(){
+    clear() {
         this.list.clear();
     }
 
@@ -118,17 +118,17 @@ class Deque {
      * Check if the deque is empty.
      * @returns {boolean} true, or false if the deque is not empty.
      */
-    isEmpty(){
+    isEmpty() {
         return this.list.isEmpty();
     }
 
     /**
-     * Check if the deque contain the specified element. 
+     * Check if the deque contain the specified element.
      * @param {Object} value The value we are looking for.
      * @param {function(Object,Object):number} callback The equals callback function.
      */
-    contains(value, callback){
-        return this.list.contains(value,callback);
+    contains(value, callback) {
+        return this.list.contains(value, callback);
     }
 
     /**
@@ -136,28 +136,28 @@ class Deque {
      * to break the iteration the callback function must return false.
      * @param {function(Object)} callback The callback function
      */
-    forEach(callback){
+    forEach(callback) {
         this.list.forEach(callback);
     }
 
     /**
      * Reverse the deque elements.
      */
-    reverse(){
+    reverse() {
         this.list.reverse();
     }
 
     /**
      * @returns {Object}
      */
-    toArray(){
+    toArray() {
         return this.list.toArray();
     }
 
     /**
-     * @return {string}  
+     * @return {string}
      */
-    toString(){
+    toString() {
         return this.list.toString();
     }
 }

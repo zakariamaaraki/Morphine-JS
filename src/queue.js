@@ -5,15 +5,15 @@
 
 class Queue {
 
-    constructor(){
-        this.list=new LinkedList();
+    constructor() {
+        this.list = new LinkedList();
     }
 
     /**
      * Add an element to the top of the queue.
-     * @param {Object} value 
+     * @param {Object} value
      */
-    enqueue(value){
+    enqueue(value) {
         this.list.add(value);
     }
 
@@ -21,7 +21,7 @@ class Queue {
      * Return the element in the top of the queue.
      * @returns {Object} The first element in the Queue.
      */
-    peek(){
+    peek() {
         return this.list.getFirst();
     }
 
@@ -29,10 +29,11 @@ class Queue {
      * Return and remove the element in the top of the queue.
      * @returns {Object} element in the top of the queue.
      */
-    dequeue(){
-        if(this.list.size()==0)return null;
+    dequeue() {
+        if (this.list.size() == 0)
+            return null;
         else {
-            let ans=this.list.get(0);
+            let ans = this.list.get(0);
             this.list.remove(0);
             return ans;
         }
@@ -42,14 +43,14 @@ class Queue {
      * Size of the queue.
      * @returns {number} The size of the queue.
      */
-    size(){
+    size() {
         return this.list.size();
     }
 
     /**
      * Set the queue empty.
      */
-    clear(){
+    clear() {
         this.list.clear();
     }
 
@@ -57,17 +58,17 @@ class Queue {
      * Check if the queue is empty.
      * @returns {boolean} true, or false if the queue is not empty.
      */
-    isEmpty(){
+    isEmpty() {
         return this.list.isEmpty();
     }
 
     /**
-     * Check if the queue contain the specified element. 
+     * Check if the queue contain the specified element.
      * @param {Object} value The value we are looking for.
      * @param {function(Object,Object):number} callback The equals callback function.
      */
-    contains(value, callback){
-        return this.list.contains(value,callback);
+    contains(value, callback) {
+        return this.list.contains(value, callback);
     }
 
     /**
@@ -75,28 +76,28 @@ class Queue {
      * to break the iteration the callback function must return false.
      * @param {function(Object)} callback The callback function
      */
-    forEach(callback){
+    forEach(callback) {
         this.list.forEach(callback);
     }
 
     /**
      * Reverse the queue elements.
      */
-    reverse(){
+    reverse() {
         this.list.reverse();
     }
 
     /**
      * @returns {Object}
      */
-    toArray(){
+    toArray() {
         return this.list.toArray();
     }
 
     /**
-     * @return {string}  
+     * @return {string}
      */
-    toString(){
+    toString() {
         return this.list.toString();
     }
 }

@@ -3,17 +3,17 @@
  * push, pop and peek in constant time.
  */
 
-class Stack{
+class Stack {
 
-    constructor(){
-        this.list=new LinkedList();
+    constructor() {
+        this.list = new LinkedList();
     }
 
     /**
      * Add an element to the top of the stack.
-     * @param {Object} value The element to push to the stack. 
+     * @param {Object} value The element to push to the stack.
      */
-    push(value){
+    push(value) {
         this.list.addLast(value);
     }
 
@@ -21,9 +21,10 @@ class Stack{
      * Remove and return the top of the stack.
      * @returns {Object} The top of the stack.
      */
-    pop(){
-        if(list.size==0)return null;
-        let ans=this.list.getFirst();
+    pop() {
+        if (list.size == 0)
+            return null;
+        let ans = this.list.getFirst();
         this.list.remove(0);
         return ans;
     }
@@ -32,7 +33,7 @@ class Stack{
      * Return the top of the stack.
      * @return {Object} The top of the stack.
      */
-    peek(){
+    peek() {
         return this.list.getFirst();
     }
 
@@ -40,14 +41,14 @@ class Stack{
      * Size of the stack.
      * @returns {number} The size of the stack.
      */
-    size(){
+    size() {
         return this.list.size();
     }
 
     /**
      * Set the queue empty.
      */
-    clear(){
+    clear() {
         this.list.clear();
     }
 
@@ -55,17 +56,17 @@ class Stack{
      * Check if the stack is empty.
      * @returns {boolean} true, or false if the stack is not empty.
      */
-    isEmpty(){
+    isEmpty() {
         return this.list.isEmpty();
     }
 
     /**
-     * Check if the stack contain the specified element. 
+     * Check if the stack contain the specified element.
      * @param {Object} value The value we are looking for.
      * @param {function(Object,Object):number} callback The equals callback function.
      */
-    contains(value, callback){
-        return this.list.contains(value,callback);
+    contains(value, callback) {
+        return this.list.contains(value, callback);
     }
 
     /**
@@ -73,28 +74,28 @@ class Stack{
      * to break the iteration the callback function must return false.
      * @param {function(Object)} callback The callback function
      */
-    forEach(callback){
+    forEach(callback) {
         this.list.forEach(callback);
     }
 
-     /**
+    /**
      * Reverse the stack elements.
      */
-    reverse(){
+    reverse() {
         this.list.reverse();
     }
 
     /**
      * @returns {Object}
      */
-    toArray(){
+    toArray() {
         return this.list.toArray();
     }
 
     /**
      * @returns {string}
      */
-    toString(){
+    toString() {
         return this.list.toString();
     }
 
