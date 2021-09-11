@@ -5,7 +5,7 @@ Full data structure library written in JavaScript.
 ## data structures
 * Stack
 * Queue
-* Dequeue
+* Deque
 * HashMap
 * HashSet
 * Heap
